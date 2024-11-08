@@ -1,9 +1,17 @@
-import { ReduxProvider } from "../providers/redux-provider";
+import { ReduxProvider } from "@/components/providers/redux-provider";
+import { ThemeProvider } from "@/components/providers/theme-provider";
 
 export default function Providers({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <ReduxProvider>{children}</ReduxProvider>
+      <ThemeProvider
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+        disableTransitionOnChange
+      >
+        <ReduxProvider>{children}</ReduxProvider>
+      </ThemeProvider>
     </>
   );
 }
