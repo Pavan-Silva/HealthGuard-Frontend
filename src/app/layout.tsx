@@ -1,8 +1,10 @@
-import { Toaster } from "@/components/sonner";
-import type { Metadata } from "next";
-import localFont from "next/font/local";
-import "./globals.css";
 import Providers from "@/components/layout/providers";
+import { Toaster } from "@/components/sonner";
+
+import NextTopLoader from "nextjs-toploader";
+import localFont from "next/font/local";
+import type { Metadata } from "next";
+import "./globals.css";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -31,6 +33,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <NextTopLoader showSpinner={false} />
         <Providers>
           {children}
           <Toaster />
