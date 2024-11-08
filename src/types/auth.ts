@@ -1,7 +1,7 @@
 import { AuditedEntity } from ".";
 
 export type User = AuditedEntity & {
-  id: number;
+  id: string;
   email: string;
   firstName: string;
   lastName: string;

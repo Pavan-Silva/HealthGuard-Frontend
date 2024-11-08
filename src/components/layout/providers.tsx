@@ -1,5 +1,6 @@
 import { ReduxProvider } from "@/components/providers/redux-provider";
 import { ThemeProvider } from "@/components/providers/theme-provider";
+import { SidebarProvider } from "@/components/ui/sidebar";
 
 export default function Providers({ children }: { children: React.ReactNode }) {
   return (
@@ -10,7 +11,9 @@ export default function Providers({ children }: { children: React.ReactNode }) {
         enableSystem
         disableTransitionOnChange
       >
-        <ReduxProvider>{children}</ReduxProvider>
+        <SidebarProvider>
+          <ReduxProvider>{children}</ReduxProvider>
+        </SidebarProvider>
       </ThemeProvider>
     </>
   );
