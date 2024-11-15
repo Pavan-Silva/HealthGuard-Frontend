@@ -10,7 +10,12 @@ export const errorLogger: Middleware = () => (next) => (action) => {
     if (error.status === 401) {
       /* Signout */
     } else {
-      toast.error(error.detail);
+      toast.error(error.detail ?? "Internal server error.", {
+        style: {
+          background: "#d61a3c",
+          color: "white",
+        },
+      });
     }
   }
 

@@ -24,8 +24,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
       <SidebarInset>
         <Header />
-
-        <main className="flex flex-1 flex-col overflow-y-auto p-6 pt-2">
+        <main className="flex flex-1 flex-col overflow-y-auto p-4 pt-2">
           {children}
         </main>
       </SidebarInset>

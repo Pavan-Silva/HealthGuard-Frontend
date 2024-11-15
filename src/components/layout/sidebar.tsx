@@ -64,43 +64,43 @@ const data = {
   navMain: [
     {
       title: "Dashboard",
-      url: "/dashboard",
+      url: "/dashboard/overview",
       icon: Layers,
     },
 
     {
       title: "Diseases",
-      url: "/diseases",
+      url: "/dashboard/diseases",
       icon: Dna,
       defaultOpen: true,
       items: [
         {
           title: "All",
-          url: "/diseases",
+          url: "/dashboard/diseases",
         },
         {
           title: "Symptoms",
-          url: "/diseases/symptoms",
+          url: "/dashboard/diseases/symptoms",
         },
         {
           title: "Treatments",
-          url: "/diseases/treatments",
+          url: "/dashboard/diseases/treatments",
         },
       ],
     },
 
     {
       title: "Users",
-      url: "/users",
+      url: "/dashboard/users",
       icon: Users,
       items: [
         {
           title: "All",
-          url: "/users",
+          url: "/dashboard/users",
         },
         {
           title: "Roles",
-          url: "#",
+          url: "/dashboard/users/roles",
         },
       ],
     },
@@ -109,7 +109,7 @@ const data = {
   projects: [
     {
       name: "Settings",
-      url: "#",
+      url: "/settings",
       icon: Settings,
     },
   ],

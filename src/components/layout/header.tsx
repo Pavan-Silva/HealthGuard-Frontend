@@ -8,15 +8,15 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
-import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { Separator } from "@/components/ui/separator";
 
 import { usePathname } from "next/navigation";
 import { Fragment } from "react";
+import { Bell } from "lucide-react";
 
 export default function Header() {
-  const path = usePathname().split("/");
+  const path = usePathname().split("/").slice(1);
 
   return (
     <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12">
@@ -31,7 +31,7 @@ export default function Header() {
                 <Fragment key={index}>
                   <BreadcrumbItem className="hidden md:block">
                     <BreadcrumbLink className="capitalize" href={`/${item}`}>
-                      {item == "" ? "Home" : item}
+                      {item}
                     </BreadcrumbLink>
                   </BreadcrumbItem>
 
@@ -39,7 +39,9 @@ export default function Header() {
                 </Fragment>
               ) : (
                 <BreadcrumbItem key={index}>
-                  <BreadcrumbPage className="capitalize">{item}</BreadcrumbPage>
+                  <BreadcrumbPage className="capitalize font-semibold">
+                    {item}
+                  </BreadcrumbPage>
                 </BreadcrumbItem>
               )
             )}
@@ -48,7 +50,7 @@ export default function Header() {
       </div>
 
       <div className="px-4 ml-auto">
-        <ThemeToggle />
+        <Bell className="size-4" />
       </div>
     </header>
   );
